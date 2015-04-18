@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata minClientVersion="2.8.1">
+       <id>rda.AssemblyInjector-Client</id>
+       <version>0.0.1-alpha</version>
+       <title>AssemblyInjector Client Components</title>
+       <authors>Ryan Davis</authors>
+       <owners>Ryan Davis</owners>
+       <licenseUrl>http://www.google.com/</licenseUrl>
+       <projectUrl>http://www.google.com/</projectUrl>
+       <requireLicenseAcceptance>false</requireLicenseAcceptance>
+       <description>
+         AssemblyInjector client library.
+       </description>
+       <summary>AssemblyInjector client library.</summary>
+       <tags>xamarin, pcl, xam.pcl, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+       <dependencies>
+         <dependency id="rda.LoadAssemblyForPCL" version="1.0.0"/>
+         <dependency id="ReactiveFileSystemWatcher"></dependency>
+         <dependency id="rda.SocketHelpers"/>
+       </dependencies>
+   </metadata>
+   <files>
+  
+     <!--Core-->
+     <file src="Injector.InjectorClient\bin\Debug\Injector.InjectorClient.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.InjectorClient.dll" />
+     <file src="Injector.InjectorClient\bin\Debug\Injector.InjectorClient.pdb" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.InjectorClient.pdb" />
+     <file src="Injector.DTO\bin\Debug\Injector.DTO.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.DTO.dll" />
+     <file src="Injector.DTO\bin\Debug\Injector.DTO.pdb" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.DTO.pdb" />
+
+     <!-- XML Comments -->
+     <!-- <file src="Injector.DTO\bin\Debug\Injector.DTO.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.DTO.xml" /> -->
+     <!-- <file src="Injector.InjectorHost\bin\Debug\Injector.InjectorHost.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.InjectorHost.xml" /> -->
+
+   </files>
+</package>

@@ -1,0 +1,9 @@
+﻿<Window x:Class="InjectorClientWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:injectorClientWpf="clr-namespace:InjectorClientWPF"
+        Title="MainWindow" Height="250" Width="800">
+    <Grid>
+        <injectorClientWpf:InjectorClientPanel />
+    </Grid>
+</Window>
