@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Attributes\Attributes.cs" />
     <Compile Include="Messaging\Messages.cs" />
     <Compile Include="Messaging\InjectorClientProxy.cs" />
     <Compile Include="InjectorDefaults.cs" />

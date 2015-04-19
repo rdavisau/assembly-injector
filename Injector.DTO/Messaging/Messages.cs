@@ -1,4 +1,5 @@
-﻿using SocketHelpers.Messaging;
+﻿using System;
+using SocketHelpers.Messaging;
 
 namespace Injector.DTO.Messaging
 {
@@ -12,5 +13,19 @@ namespace Injector.DTO.Messaging
     {
         public string AssemblyName { get; set; }
         public byte[] AssemblyBytes { get; set; }
+    }
+
+    public class ErrorMessage : Message 
+    {
+        public string ExceptionType { get; set; }
+        public string ExceptionMessage { get; set; }
+
+        public ErrorMessage() { }
+
+        public ErrorMessage(Exception e)
+        {
+            ExceptionType = e.GetType().FullName;
+            ExceptionMessage = e.Message;
+        }
     }
 }

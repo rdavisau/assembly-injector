@@ -6,8 +6,8 @@
        <title>AssemblyInjector Client Components</title>
        <authors>Ryan Davis</authors>
        <owners>Ryan Davis</owners>
-       <licenseUrl>http://www.google.com/</licenseUrl>
-       <projectUrl>http://www.google.com/</projectUrl>
+     <licenseUrl>https://raw.githubusercontent.com/rdavisau/assembly-injector/master/LICENSE</licenseUrl>
+     <projectUrl>https://github.com/rdavisau/assembly-injector</projectUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
          AssemblyInjector client library.

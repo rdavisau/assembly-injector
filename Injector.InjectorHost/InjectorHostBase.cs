@@ -32,6 +32,8 @@ namespace Injector.InjectorHost
         private List<TProxy> _connectedClients = new List<TProxy>();
         private readonly bool _forceCanInject;
 
+        public bool IsListening { get; private set; }
+
         public int ServicePort
         {
             get { return _servicePort; }
@@ -119,10 +121,14 @@ namespace Injector.InjectorHost
 
             // start listening
             await _messageHub.StartListeningAsync(ServicePort);
+
+            IsListening = true;
         }
 
         public virtual async Task StopHostingAsync()
         {
+            IsListening = false;
+
             // stop being available to service discoverers
             await _servicePublisher.Unpublish();
 
@@ -154,6 +160,11 @@ namespace Injector.InjectorHost
         protected virtual Assembly BytesToAssembly(byte[] rawAssembly)
         {
             return Loader.LoadAssembly(rawAssembly);
+        }
+
+        protected Task SendFeedback(TMessage e, TProxy proxy = null)
+        {
+            return proxy != null ? _messageHub.SendToAsync(e, proxy) : _messageHub.SendAllAsync(e);
         }
 
         protected abstract void ProcessNewAssembly(Assembly newAssembly, TProxy sender);

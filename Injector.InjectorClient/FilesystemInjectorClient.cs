@@ -56,7 +56,14 @@ namespace Injector.InjectorClient
 
             await _tcpSocketClient.ConnectAsync(address, port);
 
-            _jsonProtocolMessenger = new JsonProtocolMessenger<Message>(_tcpSocketClient);
+            _jsonProtocolMessenger = new JsonProtocolMessenger<Message>(_tcpSocketClient)
+            {
+                AdditionalTypeResolutionAssemblies =
+                {
+                    typeof (NewAssemblyMessage).Assembly
+                }
+            };
+
             _receivedMessages.Merge(_jsonProtocolMessenger.Messages, this);
             _jsonProtocolMessenger.StartExecuting();
 
@@ -77,16 +84,16 @@ namespace Injector.InjectorClient
                 .Subscribe(
                     onNext: f =>
                     {
-                        this.Log().Debug(String.Format("{0} changed, attempting to send.. ", f));
+                            this.Log().Debug(String.Format("{0} changed, attempting to send.. ", f));
 
-                        var bytes = File.ReadAllBytes(f);
-                        var msg = new NewAssemblyMessage
-                        {
-                            AssemblyName = Path.GetFileNameWithoutExtension(f),
-                            AssemblyBytes = bytes
-                        };
+                            var bytes = File.ReadAllBytes(f);
+                            var msg = new NewAssemblyMessage
+                            {
+                                AssemblyName = Path.GetFileNameWithoutExtension(f),
+                                AssemblyBytes = bytes
+                            };
 
-                        _jsonProtocolMessenger.Send(msg);
+                            _jsonProtocolMessenger.Send(msg);
                     },
                     onError: ex => this.Log().Error(ex.Message),
                     onCompleted: () => { },

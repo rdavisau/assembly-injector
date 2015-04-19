@@ -38,13 +38,13 @@
     <Reference Include="CommandLine">
       <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
     </Reference>
-    <Reference Include="Injector.DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Injector.DTO, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\rda.AssemblyInjector-Client.0.0.1-alpha-26\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.DTO.dll</HintPath>
+      <HintPath>..\packages\rda.AssemblyInjector-Client.0.0.1-alpha-46\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.DTO.dll</HintPath>
     </Reference>
-    <Reference Include="Injector.InjectorClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Injector.InjectorClient, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\rda.AssemblyInjector-Client.0.0.1-alpha-26\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.InjectorClient.dll</HintPath>
+      <HintPath>..\packages\rda.AssemblyInjector-Client.0.0.1-alpha-46\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Injector.InjectorClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -55,7 +55,7 @@
     </Reference>
     <Reference Include="SocketHelpers, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\rda.SocketHelpers.0.0.2-alpha-21\lib\net45\SocketHelpers.dll</HintPath>
+      <HintPath>..\packages\rda.SocketHelpers.0.0.2-alpha-23\lib\net45\SocketHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Sockets.Plugin">
       <HintPath>..\packages\rda.SocketsForPCL.1.1.7\lib\net45\Sockets.Plugin.dll</HintPath>
