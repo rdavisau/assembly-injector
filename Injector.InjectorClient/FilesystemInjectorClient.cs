@@ -33,6 +33,10 @@ namespace Injector.InjectorClient
             }
         }
 
+        // using MergeableSubject allows us to safely make subscriptions before _jsonProtocolMessenger is connected. 
+        private readonly MergableSubject<Message> _receivedMessages = new MergableSubject<Message>(); 
+        public IObservable<Message> ReceivedMessages { get { return _receivedMessages.SubscriptionLine; } }
+
         public bool IsWatching { get; set; }
         public bool IsConnected { get; set; }
 
@@ -53,6 +57,7 @@ namespace Injector.InjectorClient
             await _tcpSocketClient.ConnectAsync(address, port);
 
             _jsonProtocolMessenger = new JsonProtocolMessenger<Message>(_tcpSocketClient);
+            _receivedMessages.Merge(_jsonProtocolMessenger.Messages, this);
             _jsonProtocolMessenger.StartExecuting();
 
             IsConnected = true;
@@ -105,11 +110,11 @@ namespace Injector.InjectorClient
         {
             IsConnected = false;
 
+            _receivedMessages.Unmerge(this);
             _jsonProtocolMessenger.StopExecuting();
             await _tcpSocketClient.DisconnectAsync();
 
             _tcpSocketClient = new TcpSocketClient();
-            ;
         }
     }
 }
